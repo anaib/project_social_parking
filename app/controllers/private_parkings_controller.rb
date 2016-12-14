@@ -10,7 +10,8 @@ class PrivateParkingsController < ApplicationController
   end
 
   def index
-    @private_parkings = PrivateParking.page(params[:page]).per(10)
+    @q = PrivateParking.ransack(params[:q])
+    @private_parkings = @q.result(:distinct => true).includes(:offeree_user, :acceptee_user).page(params[:page]).per(10)
 
     render("private_parkings/index.html.erb")
   end
