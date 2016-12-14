@@ -13,6 +13,14 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :offeree_users,
+             :through => :private_parkings_accept,
+             :source => :offeree_user
+
+  has_many   :acceptee_users,
+             :through => :private_parkings_offer,
+             :source => :acceptee_user
+
   # Validations
 
   # Include default devise modules. Others available are:
