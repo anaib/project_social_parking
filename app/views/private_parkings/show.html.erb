@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Offeree user</dt>
-      <dd><%= @private_parking.offeree_user_id %></dd>
+      <dd>
+        <% if @private_parking.offeree_user.present? %>
+          <a href="/users/<%= @private_parking.offeree_user_id %>">
+            <%= @private_parking.offeree_user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Acceptee user</dt>
-      <dd><%= @private_parking.acceptee_user_id %></dd>
+      <dd>
+        <% if @private_parking.acceptee_user.present? %>
+          <a href="/users/<%= @private_parking.acceptee_user_id %>">
+            <%= @private_parking.acceptee_user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Date</dt>
       <dd><%= @private_parking.date %></dd>

@@ -18,8 +18,20 @@
 
       <% @private_parkings.each do |private_parking| %>
       <tr>
-        <td><%= private_parking.offeree_user.email %></td>
-        <td><%= private_parking.acceptee_user.email %></td>
+        <td>
+          <% if private_parking.offeree_user.present? %>
+            <a href="/users/<%= private_parking.offeree_user.id %>">
+              <%= private_parking.offeree_user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if private_parking.acceptee_user.present? %>
+            <a href="/users/<%= private_parking.acceptee_user.id %>">
+              <%= private_parking.acceptee_user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= private_parking.date %></td>
         <td><%= private_parking.time %></td>
         <td>
