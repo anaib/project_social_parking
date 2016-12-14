@@ -11,7 +11,7 @@
       <tr>
         <th>Offeree user</th>
         <th>Acceptee user</th>
-        <th>Date</th>
+        <th>Date avail</th>
         <th>Time</th>
         <th>Actions</th>
       </tr>
@@ -32,7 +32,7 @@
             </a>
           <% end %>
         </td>
-        <td><%= private_parking.date %></td>
+        <td><%= private_parking.date_avail %></td>
         <td><%= private_parking.time %></td>
         <td>
           <a href="/private_parkings/<%= private_parking.id %>" class="btn btn-primary">Show</a>

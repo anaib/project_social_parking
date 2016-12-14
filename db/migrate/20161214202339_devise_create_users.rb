@@ -34,7 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :password
       t.string :first_name
       t.string :last_name
-      t.integer :phone_number
+      t.string :phone_number
       t.integer :zipcode
       t.integer :points
 

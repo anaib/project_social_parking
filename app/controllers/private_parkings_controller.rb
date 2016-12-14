@@ -33,7 +33,7 @@ class PrivateParkingsController < ApplicationController
 
     @private_parking.offeree_user_id = params[:offeree_user_id]
     @private_parking.acceptee_user_id = params[:acceptee_user_id]
-    @private_parking.date = params[:date]
+    @private_parking.date_avail = params[:date_avail]
     @private_parking.time = params[:time]
 
     save_status = @private_parking.save
@@ -63,7 +63,7 @@ class PrivateParkingsController < ApplicationController
 
     @private_parking.offeree_user_id = params[:offeree_user_id]
     @private_parking.acceptee_user_id = params[:acceptee_user_id]
-    @private_parking.date = params[:date]
+    @private_parking.date_avail = params[:date_avail]
     @private_parking.time = params[:time]
 
     save_status = @private_parking.save

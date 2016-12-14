@@ -30,13 +30,13 @@
         <%= select_tag(:acceptee_user_id, options_from_collection_for_select(User.all, :id, :email, @private_parking.acceptee_user_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for date -->
+      <!-- Label and input for date_avail -->
       <div class="form-group">
-        <label for="date" class="control-label">
-          Date
+        <label for="date_avail" class="control-label">
+          Date avail
         </label>
 
-        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @private_parking.date %>">
+        <input type="text" id="date_avail" name="date_avail" placeholder="Date avail" class="form-control" value="<%= @private_parking.date_avail %>">
       </div>
 
       <!-- Label and input for time -->
