@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @private_parking.errors.any? %>
+  <% @private_parking.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Private Parking</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_private_parking" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for offeree_user_id -->
+      <div class="form-group">
+        <label for="offeree_user_id" class="control-label">
+          Offeree user
+        </label>
+
+        <input type="text" id="offeree_user_id" name="offeree_user_id" placeholder="Offeree user" class="form-control" value="<%= @private_parking.offeree_user_id %>">
+      </div>
+
+      <!-- Label and input for acceptee_user_id -->
+      <div class="form-group">
+        <label for="acceptee_user_id" class="control-label">
+          Acceptee user
+        </label>
+
+        <input type="text" id="acceptee_user_id" name="acceptee_user_id" placeholder="Acceptee user" class="form-control" value="<%= @private_parking.acceptee_user_id %>">
+      </div>
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @private_parking.date %>">
+      </div>
+
+      <!-- Label and input for time -->
+      <div class="form-group">
+        <label for="time" class="control-label">
+          Time
+        </label>
+
+        <input type="text" id="time" name="time" placeholder="Time" class="form-control" value="<%= @private_parking.time %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Private Parking
+      </button>
+      or
+      <a href="/private_parkings">Cancel</a>
+    </form>
+  </div>
+</div>
