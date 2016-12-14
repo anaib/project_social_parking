@@ -18,7 +18,7 @@
 
       <% @private_parkings.each do |private_parking| %>
       <tr>
-        <td><%= private_parking.offeree_user_id %></td>
+        <td><%= private_parking.offeree_user.email %></td>
         <td><%= private_parking.acceptee_user_id %></td>
         <td><%= private_parking.date %></td>
         <td><%= private_parking.time %></td>
