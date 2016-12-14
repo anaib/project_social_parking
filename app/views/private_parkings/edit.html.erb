@@ -24,7 +24,7 @@
           Offeree user
         </label>
 
-        <input type="text" id="offeree_user_id" name="offeree_user_id" placeholder="Offeree user" class="form-control" value="<%= @private_parking.offeree_user_id %>">
+        <%= select_tag(:offeree_user_id, options_from_collection_for_select(User.all, :id, :email, @private_parking.offeree_user_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for acceptee_user_id -->
