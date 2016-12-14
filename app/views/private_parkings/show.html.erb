@@ -23,12 +23,14 @@
       <a href="/private_parkings" class="btn btn-primary">
         Back
       </a>
-      <a href="/private_parkings/<%= @private_parking.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_private_parking/<%= @private_parking.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @private_parking.offeree_user %>
+        <a href="/private_parkings/<%= @private_parking.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_private_parking/<%= @private_parking.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>

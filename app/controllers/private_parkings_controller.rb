@@ -1,4 +1,14 @@
 class PrivateParkingsController < ApplicationController
+  before_action :current_user_must_be_private_parking_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_private_parking_user
+    private_parking = PrivateParking.find(params[:id])
+
+    unless current_user == private_parking.offeree_user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @private_parkings = PrivateParking.all
 
