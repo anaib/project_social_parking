@@ -10,7 +10,7 @@ class PrivateParkingsController < ApplicationController
   end
 
   def index
-    @private_parkings = PrivateParking.all
+    @private_parkings = PrivateParking.page(params[:page]).per(10)
 
     render("private_parkings/index.html.erb")
   end
