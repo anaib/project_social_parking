@@ -33,7 +33,7 @@
           Acceptee user
         </label>
 
-        <input type="text" id="acceptee_user_id" name="acceptee_user_id" placeholder="Acceptee user" class="form-control" value="<%= @private_parking.acceptee_user_id %>">
+        <%= select_tag(:acceptee_user_id, options_from_collection_for_select(User.all, :id, :email, @private_parking.acceptee_user_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for date -->
